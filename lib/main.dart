@@ -43,7 +43,6 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -62,17 +61,32 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       title: builderResponse.appName.validate(),
       theme: ThemeData(
-        fontFamily: GoogleFonts
-            .poppins()
-            .fontFamily,
+        fontFamily: GoogleFonts.poppins().fontFamily,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: DashboardScreen.route,
-      routes: {
-        DashboardScreen.route: (context) => DashboardScreen(),
-        PrivacyPolicyScreen.route: (context) => PrivacyPolicyScreen(),
-        TermAndConditionScreen.route: (context) => TermAndConditionScreen(),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case DashboardScreen.route:
+            return MaterialPageRoute(builder: (context) => DashboardScreen());
+          case PrivacyPolicyScreen.route:
+            return MaterialPageRoute(
+                builder: (context) => PrivacyPolicyScreen());
+          case TermAndConditionScreen.route:
+            return MaterialPageRoute(
+                builder: (context) => TermAndConditionScreen());
+          default:
+            // Handle unknown routes (404 page or redirect)
+            return MaterialPageRoute(
+                builder: (context) =>
+                    DashboardScreen()); // Default to a valid route
+        }
       },
+      initialRoute: DashboardScreen.route,
+      // routes: {
+      //   DashboardScreen.route: (context) => DashboardScreen(),
+      //   PrivacyPolicyScreen.route: (context) => PrivacyPolicyScreen(),
+      //   TermAndConditionScreen.route: (context) => TermAndConditionScreen(),
+      // },
       home: DashboardScreen(),
     );
   }

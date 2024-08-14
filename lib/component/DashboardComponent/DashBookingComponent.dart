@@ -14,7 +14,6 @@ class DashBookingComponent extends StatefulWidget {
 }
 
 class DashBookingComponentState extends State<DashBookingComponent> {
-
   @override
   void initState() {
     super.initState();
@@ -41,24 +40,30 @@ class DashBookingComponentState extends State<DashBookingComponent> {
           ),
         ),
         Container(
-          constraints: BoxConstraints(minHeight: context.height() - kToolbarHeight),
-          padding: EdgeInsets.symmetric(vertical: 50, horizontal: mCommonPadding(context)),
+          constraints:
+              BoxConstraints(minHeight: context.height() - kToolbarHeight),
+          padding: EdgeInsets.symmetric(
+              vertical: 50, horizontal: mCommonPadding(context)),
           width: context.width(),
           alignment: Alignment.topLeft,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(builderResponse.companyName.validate(), style: boldTextStyle(size: largeTextSize(context), color: Colors.white, height: 1.4)),
+              Text(builderResponse.companyName.validate(),
+                  style: boldTextStyle(
+                      size: largeTextSize(context),
+                      color: Colors.white,
+                      height: 1.4)),
               16.height,
               Row(
                 children: [
-                  Image.asset(play_store, height: 45).onTap((){
-                    commonLaunchUrl(builderResponse.playStoreLink.validate());
+                  Image.asset(play_store, height: 45).onTap(() {
+                    // commonLaunchUrl(builderResponse.playStoreLink.validate());
                   }),
                   20.width,
-                  Image.asset(app_store, height: 45).onTap((){
-                    commonLaunchUrl(builderResponse.appStoreLink.validate());
+                  Image.asset(app_store, height: 45).onTap(() {
+                    // commonLaunchUrl(builderResponse.appStoreLink.validate());
                   }),
                 ],
               ),

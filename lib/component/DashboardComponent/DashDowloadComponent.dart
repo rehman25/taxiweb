@@ -40,16 +40,17 @@ class DashDowloadComponentState extends State<DashDowloadComponent> {
         children: [
           customTextWidget(text: 'Download Now!'),
           8.height,
-          Text('${builderResponse.appName.validate()} App', style: primaryTextStyle(size: 20), textAlign: TextAlign.center),
+          Text('${builderResponse.appName.validate()} App',
+              style: primaryTextStyle(size: 20), textAlign: TextAlign.center),
           30.height,
           Row(
             children: [
-              Image.asset(play_store, height: 45).onTap((){
-                commonLaunchUrl(builderResponse.playStoreLink.validate());
+              Image.asset(play_store, height: 45).onTap(() {
+                // commonLaunchUrl(builderResponse.playStoreLink.validate());
               }),
               30.width,
-              Image.asset(app_store, height: 45).onTap((){
-                commonLaunchUrl(builderResponse.appStoreLink.validate());
+              Image.asset(app_store, height: 45).onTap(() {
+                // commonLaunchUrl(builderResponse.appStoreLink.validate());
               }),
             ],
           ),
@@ -58,20 +59,24 @@ class DashDowloadComponentState extends State<DashDowloadComponent> {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 50, horizontal: mCommonPadding(context)),
+      padding: EdgeInsets.symmetric(
+          vertical: 50, horizontal: mCommonPadding(context)),
       width: context.width(),
       child: ResponsiveWidget.isSmallScreen(context)
           ? Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 downloadDetail(),
-                Image.asset(builderResponse.appSsImage.validate(), fit: BoxFit.fill),
+                Image.asset(builderResponse.appSsImage.validate(),
+                    fit: BoxFit.fill),
               ],
             )
           : Row(
               children: [
                 downloadDetail(),
-                Image.asset(builderResponse.appSsImage.validate(), fit: BoxFit.fill).expand(),
+                Image.asset(builderResponse.appSsImage.validate(),
+                        fit: BoxFit.fill)
+                    .expand(),
               ],
             ),
     );

@@ -11,12 +11,13 @@ class PrivacyPolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size(MediaQuery.of(context).size.width, 100),
         child: DashHeaderComponent(),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: mCommonPadding(context),vertical: 16),
+        padding: EdgeInsets.symmetric(
+            horizontal: mCommonPadding(context), vertical: 16),
         child: HtmlWidget(builderResponse.privacyPolicy.validate()),
       ),
     );
