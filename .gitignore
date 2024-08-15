@@ -1,0 +1,42 @@
+# Flutter/Dart/Pub related
+**/build/
+**/ios/Flutter/.last_build_id
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/pubspec.lock
+
+# Android/IntelliJ related
+**/.idea/
+**/.gradle/
+**/local.properties
+**/.vscode/
+**/*.iml
+
+# macOS
+**/Pods/
+**/.symlinks/
+**/private/
+**/xcuserdata/
+**/DerivedData/
+**/Flutter/Flutter.podspec
+**/.ios/
+**/.dart_tool/
+**/.pub-cache/
+**/.android/
+
+# Obfuscation-related files
+**/lib/**/*.g.dart
+
+# Web related
+**/web/.dart_tool/
+
+# Generated Files
+**/flutter_export_environment.sh
+**/flutter_export_environment.bat
+**/GeneratedPluginRegistrant.*
+
+# Other
+**/.metadata
